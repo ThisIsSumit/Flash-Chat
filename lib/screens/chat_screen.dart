@@ -133,19 +133,29 @@ class MessageStream extends StatelessWidget {
               ),
             );
           }
-    
+
           final messages = snapshot.data?.docs;
-    
+
           for (var message in messages!) {
-            final messageText = message.data() as Map<String, dynamic>;
-            final messageSender = message.data;
-            final messageWidget =
-                Text('$messageText from $messageSender');
+            final messageData = message.data() as Map<String, dynamic>;
+            final messageSender = messageData['sender'];
+            final messageText = messageData['text'];
+            final messageWidget = Text(
+              '$messageText from $messageSender',
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 15,
+              ),
+            );
             messageWidgets.add(messageWidget);
           }
-    
-          return Column(
-            children: messageWidgets,
+
+          return Expanded(
+            child: ListView(
+              reverse: true,
+              children: messageWidgets,
+            ),
           );
         });
   }
