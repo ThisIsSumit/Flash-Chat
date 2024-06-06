@@ -3,6 +3,8 @@ import 'package:flash_chat/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({super.key});
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
@@ -13,7 +15,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding:  const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -22,12 +24,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: <Widget>[
                 Hero(
                   tag: 'logo',
-                  child: Container(
-                    child: Image.asset('assets/images/logo.png'),
-                    height: 60.0,
-                  ),
+                  child: SizedBox(
+                      height: 60.0,
+                      child: Image.asset('assets/images/logo.png')),
                 ),
-                Text(
+               const  Text(
                   'Flash Chat',
                   style: TextStyle(
                     color: Colors.black,
@@ -37,11 +38,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ],
             ),
-            SizedBox(
+          const  SizedBox(
               height: 48.0,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
+              padding:  const EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
                 elevation: 5.0,
                 color: Colors.lightBlueAccent,
@@ -60,7 +61,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
+              padding:const  EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
                 color: Colors.blueAccent,
                 borderRadius: BorderRadius.circular(30.0),
