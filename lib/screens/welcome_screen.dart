@@ -15,20 +15,22 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding:  const EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Row(
               children: <Widget>[
-                Hero(
-                  tag: 'logo',
-                  child: SizedBox(
-                      height: 60.0,
-                      child: Image.asset('assets/images/logo.png')),
+                Flexible(
+                  child: Hero(
+                    tag: 'logo',
+                    child: SizedBox(
+                        height: 60.0,
+                        child: Image.asset('assets/images/logo.png')),
+                  ),
                 ),
-               const  Text(
+                const Text(
                   'Flash Chat',
                   style: TextStyle(
                     color: Colors.black,
@@ -38,11 +40,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ],
             ),
-          const  SizedBox(
+            const SizedBox(
               height: 48.0,
             ),
             Padding(
-              padding:  const EdgeInsets.symmetric(vertical: 16.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
                 elevation: 5.0,
                 color: Colors.lightBlueAccent,
@@ -61,7 +63,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
             Padding(
-              padding:const  EdgeInsets.symmetric(vertical: 16.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
                 color: Colors.blueAccent,
                 borderRadius: BorderRadius.circular(30.0),
