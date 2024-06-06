@@ -1,0 +1,9 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.settings.compilerArguments": "-Xlint:deprecation",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "workbench.settings.useSplitJSON": true,
+    "csharp.suppressProjectJsonWarning": true,
+    "json.format.keepLines": true,
+    "workbench.settings.openDefaultSettings": true
+  }
