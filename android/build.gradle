@@ -12,7 +12,7 @@ buildscript {
       // Add the Maven coordinates and latest version of the plugin
     
     // ... other dependencies
-    classpath 'com.google.gms:google-services:4.3.8'
+    classpath 'com.google.gms:google-services:4.4.2'
   
     }
 }

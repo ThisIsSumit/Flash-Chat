@@ -10,7 +10,14 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Platform.isAndroid
-      ? await Firebase.initializeApp()
+      ? await Firebase.initializeApp(
+          options: const FirebaseOptions(
+            apiKey: "AIzaSyAUUSmSQ1hTHlL26rIXDBtVwnzlquzM3Vg",
+            appId: "1:75820478185:android:6ae7ee5476dae4a84bca78",
+            messagingSenderId: "75820478185",
+            projectId: "flash-chat-f229d",
+          ),
+        )
       : await Firebase.initializeApp();
   runApp(const FlashChat());
 }
