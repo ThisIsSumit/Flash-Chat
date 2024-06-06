@@ -61,35 +61,33 @@ class _ChatScreenState extends State<ChatScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             MessageStream(firestore: _firestore),
-            Expanded(
-              child: Container(
-                decoration: kMessageContainerDecoration,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        onChanged: (value) {
-                          //Do something with the user input.
-                          messageText = value;
-                        },
-                        decoration: kMessageTextFieldDecoration,
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        //Implement send functionality.
-                        _firestore.collection('messages').add(
-                          {'text': messageText, 'sender': loggedInUser.email},
-                        );
+            Container(
+              decoration: kMessageContainerDecoration,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: TextField(
+                      onChanged: (value) {
+                        //Do something with the user input.
+                        messageText = value;
                       },
-                      child: const Text(
-                        'Send',
-                        style: kSendButtonTextStyle,
-                      ),
+                      decoration: kMessageTextFieldDecoration,
                     ),
-                  ],
-                ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      //Implement send functionality.
+                      _firestore.collection('messages').add(
+                        {'text': messageText, 'sender': loggedInUser.email},
+                      );
+                    },
+                    child: const Text(
+                      'Send',
+                      style: kSendButtonTextStyle,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
